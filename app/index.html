@@ -37,18 +37,21 @@
 
 	
     <div class="panel-info-chatbox">
-          <div class="panel-body">
+        <div class="panel-body">
             <div id="chat-body">
             </div>
-          </div>
+        </div>
+        <div data-ng-show="othersTalking.length">
+            <p>{{othersTalking.length}} others are typing</p>
+        </div>
         <div class="form">
-              <div class="form-group">
-                <input type="text" disabled=true class="form-control" id="chat-message-input" 
+            <div class="form-group">
+                <input type="text" disabled=true class="form-control" data-ng-model="message" data-ng-change="setTalking()" id="chat-message-input" 
                 onkeypress="return zombieChatKeyPressed(event);" placeholder="Save your brains, enter your user name">
             </div>
         </div>
-        
+
     </div>
-    </div>
+</div>
 </body>
 </html>

@@ -1,2 +1,2 @@
 angular.module('zombie', [])
-  .controller('MainController', ['$scope', Zombie.Controllers.MainController]);
+  .controller('MainController', ['$scope', '$http', '$timeout', Zombie.Controllers.MainController]);
