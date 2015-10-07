@@ -1,0 +1,1 @@
+var MESSAGES_ENDPOINT = "https://fb1eqoiqoh.execute-api.us-west-2.amazonaws.com/ZombieWorkshopStage/zombie/message";
