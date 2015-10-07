@@ -37,7 +37,10 @@ function zombieChatKeyPressed(event)
     	document.getElementById('chat-message-input').value = '...Posting Message...';
     	//let's post the message...
     	postMessage(message);
+    } else {
+      console.log({typed: event});
     }
+
     return true;
 }
 
