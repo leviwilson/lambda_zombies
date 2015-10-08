@@ -4,16 +4,18 @@ Zombie.Controllers = Zombie.Controllers || {};
 Zombie.Controllers.MainController = function($scope, $http, $timeout) {
   var talkingUrl = BASE_URL + 'zombie/talking',
       findTalkers = function() {
-        $http.get(talkingUrl)
-          .success(function(data) {
-            console.log(data);
-            $scope.othersTalking = data;
-          })
+        if(!!$scope.name) {
+          $http.get(talkingUrl)
+            .success(function(data) {
+              console.log(data);
+              $scope.othersTalking = data;
+            })
           .error(function() {
             console.log(arguments);
           });
+        }
 
-        //$timeout(findTalkers, 1000);
+        $timeout(findTalkers, 1000);
       },
       lastNotified = _.now();
 
